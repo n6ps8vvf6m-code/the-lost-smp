@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lost SMP - Minecraft Server & Casting</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for a cool gaming font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="logo">THE LØST <span>SMP</span></div>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#rules">Rules</a>
+            <a href="#shop" onclick="openShopPopup(event)">Shop</a>
+            <a href="#discord" class="discord-btn" onclick="openDiscordPopup(event)">Discord</a>
+        </nav>
+    </header>
+
+    <!-- Hero / Main Section -->
+    <section class="hero">
+        <h1>Welcome to <span class="highlight">The Løst SMP</span></h1>
+        <p>Casting & Community – An epic scripted survival adventure awaits you.</p>
+        
+        <!-- Echte Server IP Box -->
+        <div class="ip-box" onclick="copyIP()">
+            <span id="server-ip">213.170.135.103:25663</span>
+            <button>Copy IP</button>
+        </div>
+    </section>
+
+    <!-- Features / About -->
+    <section class="features" id="about">
+        <div class="card">
+            <h3>Custom Gameplay</h3>
+            <p>Experience tailored datapacks, elytra action, and intense PvP moments in our world.</p>
+        </div>
+        <div class="card">
+            <h3>Active Community</h3>
+            <p>Join a great group of players, actors, and creators to leave your mark.</p>
+        </div>
+        <div class="card">
+            <h3>Scripted & Casted</h3>
+            <p>Be part of our immersive story, cinematic shoots, and unforgettable lore events.</p>
+        </div>
+    </section>
+
+    <!-- Rules Section (Schön aufbereitet) -->
+    <section class="rules-section" id="rules">
+        <h2 class="section-title">Server & Casting <span>Rules</span></h2>
+        <div class="rules-grid">
+            
+            <div class="rule-card">
+                <h3>§1. General Rules</h3>
+                <ul>
+                    <li><strong>Respect & Conduct:</strong> Zero tolerance for hate speech, harassment, toxicity, or discrimination. Treat everyone with respect.</li>
+                    <li><strong>No Spam/Promo:</strong> Do not post invite links or self-promotion outside of dedicated channels.</li>
+                    <li><strong>Privacy:</strong> Doxxing or sharing private DMs without consent results in an instant ban.</li>
+                </ul>
+            </div>
+
+            <div class="rule-card">
+                <h3>§2. Actor & Casting</h3>
+                <ul>
+                    <li><strong>Requirements:</strong> Clear microphone, Minecraft Java Edition, and high reliability for schedules.</li>
+                    <li><strong>Applications:</strong> Apply strictly in the designated casting channel. Do not DM staff about your status.</li>
+                    <li><strong>Strict NDA:</strong> Lore, scripts, plot twists, and behind-the-scenes plans are 100% confidential. Leaking results in a perma-ban.</li>
+                </ul>
+            </div>
+
+            <div class="rule-card">
+                <h3>§3. Filming & Voice</h3>
+                <ul>
+                    <li><strong>Audio Setup:</strong> Push-to-Talk is required in all recording and voice channels.</li>
+                    <li><strong>Follow Direction:</strong> Obey director calls during shoots. Intentionally throwing or ruining a shot gets you recast instantly.</li>
+                </ul>
+            </div>
+
+            <div class="rule-card">
+                <h3>§4. Enforcement</h3>
+                <ul>
+                    <li><strong>Staff Discretion:</strong> Staff reserves the right to mute, kick, or ban anyone violating these rules at any time.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Shop Under Development Modal -->
+    <div id="shopModal" class="modal">
+        <div class="modal-content">
+            <h2>🛒 Shop</h2>
+            <p>Sorry! <strong>Under Development</strong></p>
+            <p class="modal-sub">Soon you will be able to buy ranks, Netherite armor, and perks here. Stay tuned!</p>
+            <button onclick="closeShopPopup()">Got it</button>
+        </div>
+    </div>
+
+    <!-- Echter Discord Invite Modal -->
+    <div id="discordModal" class="modal">
+        <div class="modal-content">
+            <h2>💬 Join our Discord</h2>
+            <p>Connect with the cast, community, and stay updated!</p>
+            
+            <!-- Echter Discord Link -->
+            <div class="ip-box" onclick="copyDiscordLink()" style="margin: 20px 0;">
+                <span id="discord-link">https://discord.gg/t2fZY9JZQX</span>
+                <button>Copy Link</button>
+            </div>
+
+            <button onclick="closeDiscordPopup()">Close</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 The Løst SMP. Not endorsed or approved by Mojang or Microsoft.</p>
+    </footer>
+
+    <script>
+        function copyIP() {
+            navigator.clipboard.writeText("213.170.135.103:25663");
+            alert("Server IP copied to clipboard!");
+        }
+
+        function copyDiscordLink() {
+            navigator.clipboard.writeText("https://discord.gg/t2fZY9JZQX");
+            alert("Discord invite link copied to clipboard!");
+        }
+
+        // Shop Popup
+        function openShopPopup(event) {
+            event.preventDefault();
+            document.getElementById("shopModal").style.display = "flex";
+        }
+        function closeShopPopup() {
+            document.getElementById("shopModal").style.display = "none";
+        }
+
+        // Discord Popup
+        function openDiscordPopup(event) {
+            event.preventDefault();
+            document.getElementById("discordModal").style.display = "flex";
+        }
+        function closeDiscordPopup() {
+            document.getElementById("discordModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
